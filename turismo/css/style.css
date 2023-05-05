@@ -1,0 +1,239 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: "Open Sans", sans-serif;
+}
+body{
+	background: #f8b195;
+    display: flex;
+    flex-direction: column;s
+}
+header{
+	width: 100%;
+	height: 90px;
+	background-color: #C1867B;
+}
+.interior{
+	max-width: 100%;
+	padding: 0 10px;
+	margin: auto;
+}
+.logo{
+	float: left;
+	padding: 5px 20px 0;
+}
+.logo img{
+	height: 80px;
+}
+.logo img:hover{
+	transform: scale(1.1);
+}
+.navegacion{
+	float: right;
+	display: flex;
+	align-items: center;
+	min-height: 90px;
+	z-index: 1000;
+}
+.navegacion ul{
+	list-style: none;
+	padding: 0 10px;
+}
+.navegacion ul li{
+	display: inline-block;
+	position: relative;
+	transition: .3s linear;
+	z-index: 1000;
+}
+.navegacion ul li:hover{
+	transform: scale(1.1);
+}
+.navegacion ul li a{
+	color: #ffffff;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 12px 20px;
+	transition: .3s linear;
+}
+.navegacion ul li a:hover{
+	color: #f8b195;
+	transform: scale(1.1);
+}
+.navegacion ul li:hover .hijos{
+	display: block;
+}
+
+
+
+
+@charset "UTF-8";
+/* Aquí definimos las Custom properties */
+:root {
+  --negro: #f8b195;
+  --blanco: #ececec;
+  --sombra-ppal: #c9c9c9;
+  --sombra-sec: #ffffff;
+  --borde-negro: #f8b195;
+  --marcado: rgb(127, 195, 255);
+  /* Tipografía */
+  --tipo-principal: Helvetica, Arial, sans-serif;
+}
+
+/* Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --negro: #ececec;
+    --blanco: #f8b195;
+    --sombra-ppal: #f8b195;
+    --sombra-sec: #f8b195;
+    --borde-negro: #f8b195;
+  }
+}
+
+img {
+  max-width: 150%;
+  height: 700px;
+  width: 150%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+video {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
+p a {
+  display: inline;
+}
+
+li {
+  list-style-type: none;
+}
+
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+  -webkit-hyphens: auto;
+          hyphens: auto;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+form, input, textarea, select, button {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+          hyphens: auto;
+  background-color: transparent;
+  display: block;
+}
+
+body {
+  font-family: var(--tipo-principal);
+  font-size: 100%;
+  line-height: 1.4em;
+  min-height: 100vh;
+  background-color: var(--blanco);
+  color: var(--negro);
+  -webkit-hyphens: auto;
+          hyphens: auto;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.carrousel {
+  width: 50%;
+  max-width: 120em;
+  padding: 2em;
+  color: var(--negro);
+  transition: all 0.4s ease;
+  border-radius: 1em;
+  background-color: var(--blanco);
+
+  overflow: hidden;
+}
+
+.carrousel .grande {
+  width: 200%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--negro);
+  transition: all 0.4s ease;
+  border-radius: 1em;
+  background-color: var(--blanco);
+
+  padding: 2em;
+  transition: all 0.5s ease;
+  transform: translateX(0%);
+}
+
+.carrousel .img {
+  width: calc( 100% / 2 - 2em);
+  min-height: 10vh;
+  color: var(--negro);
+  transition: all 0.4s ease;
+  border-radius: 1em;
+  background-color: var(--blanco);
+
+}
+
+.carrousel .puntos {
+  width: 100%;
+  margin: 1em 0 0;
+  padding: 0.4em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.carrousel .punto {
+  width: 2em;
+  height: 2em;
+  margin: 1em 1em 0;
+  color: #f3ae54;
+  transition: all 0.4s ease;
+  border-radius: 1em;
+  background-color: #f3ae54;
+  box-shadow: 0.6em 0.6em 1.2em var(--sombra-ppal), -0.6em -0.6em 1.2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+}
+
+.carrousel .punto.activo {
+  background-color: #af511b;
+}
